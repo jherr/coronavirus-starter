@@ -13,7 +13,7 @@ const counties = fs
     date: new Date(Date.parse(date)),
     county,
     state,
-    fips: parseInt(fips),
+    fips,
     cases: parseInt(cases),
     deaths: parseInt(deaths)
   }));
@@ -84,7 +84,7 @@ const FipsChart = (({ fips }) => {
 
 const App = () => (
   <div>
-    {[41005, 41067, 41051].map(fips => (
+    {['41005', '41067', '41051'].map(fips => (
       <FipsChart
         key={fips}
         fips={fips}
